@@ -2,11 +2,11 @@ import { NextApiRequest, NextApiResponse } from "next";
 import bodyParser from "body-parser";
 import Resturant from "../../models/Resturants";
 import connectToDb from "@/app/utils/database";
-export const config = {
-	api: {
-		bodyParser: true, // Disable the default body parsing
-	},
-};
+// export const config = {
+// 	api: {
+// 		bodyParser: true, // Disable the default body parsing
+// 	},
+// };
 
 export const POST = async (req: any, res: NextApiResponse) => {
 	try {
