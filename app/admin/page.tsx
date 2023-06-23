@@ -4,7 +4,7 @@ import { getAllResturants } from "../utils/resturant";
 import { IResturant } from "@/libs/types";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const MyPage = () => {
 	const [data, setData] = useState<IResturant[]>([]);
 	const router = useRouter();
 	useLayoutEffect(() => {
@@ -56,4 +56,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default MyPage;

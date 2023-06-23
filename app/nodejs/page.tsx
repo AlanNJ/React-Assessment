@@ -5,7 +5,7 @@ import ResturantCard from "../Components/UI/ResturantCard";
 import { getAllResturants } from "../utils/resturant";
 import { IResturant } from "@/libs/types";
 
-const pages = () => {
+const NodePage = () => {
 	const [data, setData] = useState<IResturant[]>([]);
 	useEffect(() => {
 		let res = getAllResturants();
@@ -26,7 +26,7 @@ const pages = () => {
 	);
 };
 
-export default pages;
+export default NodePage;
 // export async function getServerSideProps() {
 // 	const response = await axios.get("/api/resturants/new");
 // 	const result = await response.data();

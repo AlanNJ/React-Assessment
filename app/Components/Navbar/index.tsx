@@ -88,5 +88,6 @@ const Navbar = forwardRef<HTMLDivElement, props>(({ state, onClose }, ref) => {
 		// </div>
 	);
 });
+Navbar.displayName = "Navbar";
 
 export default Navbar;

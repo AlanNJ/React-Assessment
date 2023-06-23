@@ -27,7 +27,7 @@ export const POST = async (req: any, res: NextApiResponse) => {
 		console.log(err);
 	}
 };
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = async () => {
 	// await jsonParser(req, res, () => console.log("hello")); // Parse the request body
 	try {
 		await connectToDb();
