@@ -1,34 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React and Node Assesment
 
-## Getting Started
+This is a Next js app build on top of React.It contains a simple data sorting UI with search filter options.
+On the other portion,I have created a serverless backend routes that communicates with the mongodb cluster.
+However,as Next 13 app based routing is still in beta and cant be used efficiently used in production,i have used a headless semgmented routes which creates and dies instantly when the reques comes.
 
-First, run the development server:
+#### Site is live on:
+
+- [visit](https://react-assessment-8f0eyci3s-alannj.vercel.app/)
+
+## Installation
+
+First clone this repo on your local system.Then hit
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  npm install --y
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+When all the dependencies are installed correcly,hit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Environment Variables
 
-## Learn More
+To run this project, you will need to add the following environment variables to your .env file
 
-To learn more about Next.js, take a look at the following resources:
+`MONGO_URI`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You need to add your own clusted url here
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## API Reference
 
-## Deploy on Vercel
+All the routes are serverless.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Following are the routes with Parameters they take
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Get all resturants details
+
+```http
+  GET /api/resturants/new
+```
+
+| Parameter | Type   | Description        |
+| :-------- | :----- | :----------------- |
+| `none`    | `none` | retrives all items |
+
+#### Get item
+
+```http
+  GET /api/resturants/${params.id}
+```
+
+| Parameter | Type       | Description                       |
+| :-------- | :--------- | :-------------------------------- |
+| `id`      | `ObjectId` | **Required**. Id of item to fetch |
+
+#### Add Reviews
+
+```http
+  POST /api/resturants/single
+```
+
+| Parameter | Type       | body                              |
+| :-------- | :--------- | :-------------------------------- |
+| `id`      | `ObjectId` | **Required**. Id of item to fetch |
+| `reviews` | `string`   | **Required**. actual review       |
+
+id and reviews are passed as a request body.
+
+#### Database Structure
+
+| model       | Type              | name      |
+| :---------- | :---------------- | :-------- |
+| `resturant` | `Mongoose.Schema` | Resturant |
+
+#### Resturant Attributes
+
+| attributes | Type       |
+| :--------- | :--------- |
+| `name`     | `string`   |
+| `age`      | `string`   |
+| `image`    | `string`   |
+| `_id`      | `ObjextId` |
+| `address`  | `string`   |
+| `reviews`  | `[string]` |
+
+## Note
+
+Login only works with following credentials:
+
+`email`:demo@coralmango.com
+`password`:demo
+
+I havent worked on styling the components.Just cared about the required functionality.UI can me made accordingly.
