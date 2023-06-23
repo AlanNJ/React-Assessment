@@ -3,25 +3,105 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--card-primary: white;
+	--text-col: black;
+  --color-bg: 243, 244, 245;
+	--card-bg:255, 255, 255, 0.45
+
+	--foreground: black;
+}
+.dark {
+	--color-bg: 15, 23, 42; /* #0f172a*/
+	--color-bg-side: 30, 41, 59; /* #1e293b*/
+	--digital-category-bgc: #0d4c76;
+	--fashion-category-bgc: #892a19;
+	--beauty-category-bgc: #6d305f;
+	--sport-category-bgc: #650606;
+	--house-category-bgc: #164c4b;
+	--toy-category-bgc: #6d3d4b;
+	--stationery-category-bgc: #6a4202;
+	--primary-color: white;
+	--card-bg:58, 56, 56, 0.45;
+	
+
+	--color-text-base: 226, 232, 240; /*#e2e8f0*/
+	--color-text-muted: 140, 154, 175; /*#8c9aaf*/
+	--color-text-side: 255, 231, 231; /*#fff*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html[dir="ltr"] {
+	--font-family: "Poppins", "Roboto", "sans-serif";
+}
+[data-theme="dark"] body {
+	--background: black;
+	--foreground: white;
 }
 
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+} */
+
+/* body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
+} */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	background: rgb(var(--color-bg));
+	color: var(--primary-color);
+	font-family: var(--font-family);
+}
+
+
+.sort:hover + .toshow {
+  display: flex !important;
+}
+.shown1{
+  display: flex;
+  position: absolute;
+  bottom: -6rem;
+}
+.shown2{
+  display: flex;
+    position: absolute;
+    bottom: -6rem;
+   
+  }
+  .show{
+	display: block;
+  }
+
+/* Additional styles for the .toshow element */
+
+
+.toshow1 span {
+  padding: 0.25rem 1rem;
+  transition: background-color 150ms;
+}
+
+.toshow1 hr {
+  margin: 0.25rem 0;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgb(var(--color-bg));
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #a71b4a;
+	border-radius: 100vw;
 }

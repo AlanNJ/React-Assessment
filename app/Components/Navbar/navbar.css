@@ -1,0 +1,45 @@
+.navbar {
+	/* visibility: hidden;
+	opacity: 0; */
+
+	left: -30rem;
+}
+.navbar.entering,
+.navbar.entered {
+	/* Transition duration */
+	transition: left 300ms ease-in-out;
+	/* Final width */
+
+	left: 0;
+	/* visibility: visible;
+	opacity: 1; */
+}
+
+.navbar.exiting,
+.navbar.exited {
+	/* Transition duration */
+	transition: left 300ms ease-out;
+	/* Final width */
+
+	left: -30rem;
+	/* visibility: hidden;
+	opacity: 0; */
+}
+.dropdown {
+	height: 0;
+}
+.dropdown.entering,
+.dropdown.entered {
+	/* Transition duration */
+	transition: height 300ms ease-in-out;
+	/* Final width */
+	height: 60%;
+}
+
+.dropdown.exiting,
+.dropdown.exited {
+	/* Transition duration */
+	transition: height 300ms ease-in-out;
+	/* Final width */
+	height: 0;
+}
